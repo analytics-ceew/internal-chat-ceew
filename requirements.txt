@@ -1,0 +1,9 @@
+streamlit
+dotenv
+os
+langchain.embeddings.openai
+pinecone
+langchain_pinecone
+langchain_openai
+langchain.prompts
+langchain.chains
