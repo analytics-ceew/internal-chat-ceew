@@ -10,8 +10,8 @@ from langchain.chains import RetrievalQA
 
 
 
-os.environ['PINECONE_API_KEY'] == st.secrets("PINECONE_API_KEY")
-os.environ['OPENAI_API_KEY'] == st.secrets("OPENAI_API_KEY")
+os.environ['PINECONE_API_KEY'] == st.secrets["PINECONE_API_KEY"]
+os.environ['OPENAI_API_KEY'] == st.secrets["OPENAI_API_KEY"]
 embedding = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
