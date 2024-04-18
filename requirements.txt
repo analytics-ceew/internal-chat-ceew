@@ -1,6 +1,4 @@
 streamlit
-dotenv
-os
 langchain.embeddings.openai
 pinecone
 langchain_pinecone
