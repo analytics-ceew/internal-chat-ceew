@@ -1,6 +1,6 @@
 import streamlit as st
-from dotenv import load_dotenv
-import os
+#from dotenv import load_dotenv
+#import os
 from langchain.embeddings.openai import OpenAIEmbeddings
 from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
@@ -8,11 +8,13 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
-load_dotenv()
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-embedding = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
-pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
+#load_dotenv()
+#PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+#embedding = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
+#pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
+embedding = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+pc = Pinecone(api_key=PINECONE_API_KEY)
 
 
 
@@ -24,7 +26,8 @@ def query_vectordb(query,source):
     docsearch = PineconeVectorStore(index_name=index_name, embedding=embedding)
     # Setting main variables
     llm_name = "gpt-3.5-turbo"
-    llm = ChatOpenAI(model_name=llm_name, temperature=0,openai_api_key=os.environ["OPENAI_API_KEY"])
+    #llm = ChatOpenAI(model_name=llm_name, temperature=0,openai_api_key=os.environ["OPENAI_API_KEY"])
+       llm = ChatOpenAI(model_name=llm_name, temperature=0,openai_api_key=OPENAI_API_KEY)
     # Build prompt
     template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible.
     Never answer a question cannot be answered from the context itself. Context Should be the only source of information for the answer.
