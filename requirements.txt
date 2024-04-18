@@ -1,4 +1,4 @@
-langchain
-pinecone
+langchain==0.1.11
+pinecone==3.2.2
 langchain_pinecone
 langchain_openai
