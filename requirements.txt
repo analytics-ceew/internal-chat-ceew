@@ -1,7 +1,4 @@
-streamlit
-langchain.embeddings.openai
+langchain
 pinecone
 langchain_pinecone
 langchain_openai
-langchain.prompts
-langchain.chains
