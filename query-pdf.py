@@ -27,7 +27,7 @@ def query_vectordb(query,source):
     # Setting main variables
     llm_name = "gpt-3.5-turbo"
     #llm = ChatOpenAI(model_name=llm_name, temperature=0,openai_api_key=os.environ["OPENAI_API_KEY"])
-       llm = ChatOpenAI(model_name=llm_name, temperature=0,openai_api_key=OPENAI_API_KEY)
+    llm = ChatOpenAI(model_name=llm_name, temperature=0,openai_api_key=OPENAI_API_KEY)
     # Build prompt
     template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible.
     Never answer a question cannot be answered from the context itself. Context Should be the only source of information for the answer.
