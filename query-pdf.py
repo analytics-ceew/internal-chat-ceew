@@ -45,7 +45,7 @@ with st.form("qabot"):
     question = st.text_input('Ask your Query',key="question")
     source = st.radio(
     "Select source of your Answer",
-    ["CEEW Policy Guidelines", "Published Reports/Content"],
+    ["CEEW Policy Guidelines", "Reports/CEF Analysis/Blogs"],
     key="source")
     submitted = st.form_submit_button('Ask')
     if submitted:
